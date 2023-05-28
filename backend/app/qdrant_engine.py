@@ -13,7 +13,7 @@ from qdrant_client.http.models import Filter
 from qdrant_client.http import models as rest
 from sentence_transformers import SentenceTransformer
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
-from config import settings
+from backend.app.config import settings
 import uuid
 import logging
 
@@ -32,9 +32,10 @@ qa_chain = load_qa_chain(llm=OpenAI(openai_api_key=settings.openai_api_key, stre
 class QdrantIndex():
 
     def __init__(self, qdrant_host: str, qdrant_api_key: str, prefer_grpc: bool):
-        if qdrant_host == 'localhost':
+        if qdrant_host == '7e33aa56-11b4-482d-ba7b-e2d1778eb45b.us-east-1-0.aws.cloud.qdrant.io':
             self.qdrant_client = QdrantClient(
-                url="http://localhost:6333",
+                url="https://7e33aa56-11b4-482d-ba7b-e2d1778eb45b.us-east-1-0.aws.cloud.qdrant.io:6333",
+                api_key="-qEs6IcZ_PSbkvMDI9Hsti-wxIAmJGg2jN0M3zF8P0qXD7RLnQX_yg"
             )
         else:
             self.qdrant_client = QdrantClient(
