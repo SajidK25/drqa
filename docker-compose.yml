@@ -8,8 +8,23 @@ services:
     container_name: drqa-backend
     command: bash -c 'uvicorn backend.app.main:app --host 0.0.0.0 --reload --port=8000'
     volumes:
-      - .:/app
+      - ./backend:/app
     ports:
       - 8001:8000
     env_file:
       - ./backend/app/.env
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: drqa-frontend
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    depends_on:
+      - web

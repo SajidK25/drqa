@@ -13,8 +13,8 @@ from qdrant_client.http.models import Filter
 from qdrant_client.http import models as rest
 from sentence_transformers import SentenceTransformer
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
-# from backend.app.config import settings
-from config import settings
+from backend.app.config import settings
+# from config import settings
 import uuid
 import logging
 
