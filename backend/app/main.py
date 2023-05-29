@@ -2,13 +2,15 @@ from fastapi import FastAPI, Depends, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi import Request
-from backend.app.config import settings
+# from backend.app.config import settings
+from config import settings
 import typing as t
 import uvicorn
 import os
 
 
-from backend.app.qdrant_engine import QdrantIndex
+# from backend.app.qdrant_engine import QdrantIndex
+from qdrant_engine import QdrantIndex
 # from sentence_transformers import SentenceTransformer
 
 
