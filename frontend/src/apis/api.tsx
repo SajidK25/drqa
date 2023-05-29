@@ -5,7 +5,7 @@ import axios, {
   AxiosProgressEvent,
 } from 'axios';
 
-const uploadUrl: string = 'https://drqa-backend.onrender.com/';
+const uploadUrl: string = 'https://drqa-backend.onrender.com';
 // const uploadUrl: string = 'http://localhost:8000';
 export interface Config extends AxiosRequestConfig {
   onUploadProgress?: (progressEvent: AxiosProgressEvent) => void;
